@@ -32,12 +32,18 @@ mat-grid-list {
 	border-bottom: 1px solid silver;
 }
 
-mat-grid-tile .title {
-	color: red;
+mat-grid-tile .author {
+	margin-left: 10px;
+	color: silver;
+	font-weight: 1000;
 }
 
-mat-grid-tile {
-
+mat-grid-tile .articleTitle {
 	color: #333;
-	font-family: 'Manjari'
+	font-family: 'Manjari';
+	font-weight: 1000;
+}
+
+.tash {
+	cursor: pointer;
 }
