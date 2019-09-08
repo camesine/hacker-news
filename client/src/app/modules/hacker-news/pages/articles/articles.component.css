@@ -20,3 +20,24 @@
 span {
     font-size: 18px;
 }
+
+mat-list {
+	padding: 20px;
+}
+
+mat-grid-list {
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 5px;
+	border-bottom: 1px solid silver;
+}
+
+mat-grid-tile .title {
+	color: red;
+}
+
+mat-grid-tile {
+
+	color: #333;
+	font-family: 'Manjari'
+}
