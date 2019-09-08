@@ -4,6 +4,8 @@ import { ArticlesComponent } from './articles.component';
 import { RouterModule } from '@angular/router';
 import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
+import { HeaderModule } from '../../../cross/header/header.module';
+import { ArticlesListComponent } from './articles-list/articles-list.component';
 
 const ArticlesRouter = RouterModule.forChild([{
   path: '',
@@ -11,12 +13,13 @@ const ArticlesRouter = RouterModule.forChild([{
 }]);
 
 @NgModule({
-  declarations: [ArticlesComponent],
+  declarations: [ArticlesComponent, ArticlesListComponent],
   imports: [
     ArticlesRouter,
     CommonModule,
     MatListModule,
-    MatGridListModule
+    MatGridListModule,
+    HeaderModule
   ]
 })
 export class ArticlesModule { }

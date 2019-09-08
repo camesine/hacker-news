@@ -1,0 +1,22 @@
+.header {
+	vertical-align: middle;
+	padding: 40px;
+	min-height: 10%;
+	background-color: #333;
+}
+
+.title {
+	color: white;
+	font-size: 50px;
+	font-weight: 1000;
+}
+
+.subtitle {
+	color: white;
+    font-size: 20px;
+	font-weight: 1000;
+}
+
+span {
+    font-size: 18px;
+}
