@@ -2,8 +2,12 @@
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
+import { COMMON } from './common';
+
 export const environment = {
-  production: false
+  BASE: 'http://localhost:8080',
+  production: false,
+  ...COMMON,
 };
 
 /*
