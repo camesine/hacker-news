@@ -1,7 +1,5 @@
 import * as express from "express";
-import * as jwt from "express-jwt";
-import { } from "../app/routes";
-import { config } from "../config";
+import { ArticleRouter } from "../app/routes";
 
 interface IROUTER {
     path: string;
@@ -9,4 +7,10 @@ interface IROUTER {
     handler: express.Router;
 }
 
-export const ROUTER: IROUTER[] = [];
+const Article = new ArticleRouter();
+
+export const ROUTER: IROUTER[] = [{
+    handler: Article.router,
+    middleware: [],
+    path: "/article",
+}];

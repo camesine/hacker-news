@@ -1,19 +1,17 @@
 import { env } from "process";
 
 const LOCAL_CONFIGURATION = {
-    DB: "test",
-    PASSWORD: "",
-    PORT_DB: 3306,
-    SERVER: "127.0.0.1",
-    USER_DB: "root",
+    MONGODB: {
+        AUTH: {},
+        SERVER: "mongodb://127.0.0.1:27017/hacker_news",
+    },
 };
 
 const PRODUCTION_CONFIGURATION = {
-    DB: env.DB,
-    PASSWORD: env.PASSWORD,
-    PORT_DB: Number(env.PORT_DB),
-    SERVER: env.SERVER,
-    USER_DB: env.USER_DB,
+    MONGODB: {
+        AUTH: {},
+        SERVER: env.SERVER,
+    },
 };
 
 export function isProduction(): boolean {
@@ -24,4 +22,5 @@ export const config = {
     DATABASE: isProduction() ? PRODUCTION_CONFIGURATION : LOCAL_CONFIGURATION,
     PORT_APP: 8080,
     SECRET: env.SECRET,
+    URL_ARTICLES: "https://hn.algolia.com/api/v1/search_by_date?query=nodejs",
 };

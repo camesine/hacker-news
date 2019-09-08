@@ -3,6 +3,7 @@ import * as dotenv from "dotenv";
 import { cpus } from "os";
 import { resolve } from "path";
 import { env } from "process";
+import { cronSync } from "./app/scheduler/PopulateNews.scheduler";
 import { config, isProduction } from "./config";
 import { Server } from "./config/Server";
 
@@ -10,6 +11,7 @@ dotenv.config({ path: resolve() + "/.env" });
 
 if (cluster.isMaster) {
     console.log(`\n -------------------> RUN ${env.NODE_ENV} ENVIRONMENT \n`);
+    cronSync.start();
     for (const _ of cpus()) {
         cluster.fork();
         if (!isProduction()) {

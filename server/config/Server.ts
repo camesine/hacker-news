@@ -4,6 +4,7 @@ import * as express from "express";
 import * as http from "http";
 import * as methodOverride from "method-override";
 import * as morgan from "morgan";
+import { Connection } from "./Database";
 import { ROUTER } from "./Router";
 
 export class Server {
@@ -17,6 +18,7 @@ export class Server {
     }
 
     public async start(): Promise<http.Server> {
+        await Connection();
         this.expressConfiguration();
         this.configurationRouter();
         return this.server;
