@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
+import { ProvidersModule } from './providers';
 
 const ROUTES: Routes = [{
   path: '',
@@ -12,7 +13,8 @@ const ROUTES: Routes = [{
   declarations: [],
   imports: [
     RouterModule.forChild(ROUTES),
-    CommonModule
+    CommonModule,
+    ProvidersModule
   ]
 })
 export class HackerNewsModule { }

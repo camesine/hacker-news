@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ContextsProviderService } from '../../providers';
 
 interface IArticle {
   author: string;
@@ -18,14 +19,31 @@ interface IArticle {
 })
 export class ArticlesComponent implements OnInit {
 
-  articles: any[] = [{}, {}];
-  constructor() { }
+  articles: IArticle[] = [];
+  constructor(private contextProvider: ContextsProviderService) { }
 
   ngOnInit() {
+    this.listar();
   }
 
-  deleteArticleEvent(param) {
-    console.log(param);
+  listar() {
+    const subscribe = this.contextProvider.listArticles().subscribe((complete) => {
+      this.articles = complete.articles;
+    }, (err) => {
+      alert('Error');
+    }, () => {
+      subscribe.unsubscribe();
+    });
+  }
+
+  deleteArticleEvent(id) {
+    const subscribe = this.contextProvider.removeArticle(id).subscribe(() => {
+      this.listar();
+    }, (err) => {
+      alert('Error');
+    }, () => {
+      subscribe.unsubscribe();
+    });
   }
 
 }

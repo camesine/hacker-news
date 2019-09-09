@@ -29,6 +29,7 @@ export class Server {
     }
 
     private expressConfiguration(): void {
+        this.app.enable("etag");
         this.app.use(bodyParser.urlencoded({ extended: true }));
         this.app.use(bodyParser.json({ limit: "50mb" }));
         this.app.use(methodOverride());

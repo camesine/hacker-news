@@ -15,8 +15,13 @@ export class ArticlesListComponent implements OnInit {
   }
 
   deleteArticle(param) {
-    console.log("HI", param)
     this.deleteArticleEvent.emit(param);
+  }
+
+  redirect(url) {
+    if (url) {
+      window.open(url, '_blank');
+    }
   }
 
 }

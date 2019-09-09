@@ -6,6 +6,7 @@ import { MatListModule } from '@angular/material/list';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { HeaderModule } from '../../../cross/header/header.module';
 import { ArticlesListComponent } from './articles-list/articles-list.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const ArticlesRouter = RouterModule.forChild([{
   path: '',
@@ -19,7 +20,8 @@ const ArticlesRouter = RouterModule.forChild([{
     CommonModule,
     MatListModule,
     MatGridListModule,
-    HeaderModule
+    HeaderModule,
+    HttpClientModule,
   ]
 })
 export class ArticlesModule { }

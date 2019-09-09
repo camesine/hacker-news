@@ -1,5 +1,5 @@
 export const COMMON = {
-    PACIENTES: {
+    ARTICLES: {
         ENDPOINT: '/article',
         SERVICE: {
             getAll: '',
