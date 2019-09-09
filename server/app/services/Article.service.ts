@@ -21,6 +21,7 @@ export class ArticleService {
             });
             return acc;
         }, []);
+        await TempArticles.remove({});
         await TempArticles.insertMany(result);
         const news = await this.verifyNotExist();
         await Articles.insertMany(news);
