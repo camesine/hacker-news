@@ -1,14 +1,17 @@
-<mat-grid-list (click)="redirect(article.url)" *ngFor="let article of articles" cols = "12" rowHeight = "50px">
-    <mat-grid-tile [colspan] = "10" [rowspan] = "1">
+<mat-grid-list *ngFor="let article of articles" cols = "12" rowHeight = "50px">
+    <mat-grid-tile (click)="redirect(article.url)" [colspan] = "10" [rowspan] = "1">
     <p class="articleTitle">{{article.title}}</p>
     <p class="author" > - {{article.author}} - </p>
     </mat-grid-tile>
-    <mat-grid-tile 
+    <mat-grid-tile (click)="redirect(article.url)"
     [colspan] = "1"
     [rowspan] = "1">{{article.date}}
     </mat-grid-tile>
     <mat-grid-tile 
     [colspan] = "1"
-    [rowspan] = "1"><p (click)="deleteArticle(article._id)" class="tash" ><i class="fas fa-trash-alt"></i></p>
+    [rowspan] = "1">
+    <div (click)="deleteArticle(article._id)" class="tash">
+        <button class="tash" ><i class="fas fa-trash-alt"></i></button>
+    </div>
     </mat-grid-tile>
 </mat-grid-list>

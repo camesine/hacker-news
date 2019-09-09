@@ -2,7 +2,9 @@ mat-list {
 	padding: 20px;
 }
 
+
 mat-grid-list {
+	background-color: #fff;
 	margin-left: 20px;
 	margin-right: 20px;
 	margin-top: 5px;
@@ -10,9 +12,14 @@ mat-grid-list {
 	cursor: pointer;
 }
 
+mat-grid-list:hover {
+	background-color: #fafafa;
+}
+
 mat-grid-tile .author {
+	font-size: 13px;
 	margin-left: 10px;
-	color: silver;
+	color: #999;
 	font-weight: 1000;
 }
 
@@ -23,5 +30,11 @@ mat-grid-tile .articleTitle {
 }
 
 .tash {
-	cursor: pointer;
+	opacity: 1;
+	background: rgba(255, 255, 255, 0);
+    cursor: pointer;
+	border: none;
+	height: 40px;
+	width: 40px;
+	z-index: 999;
 }

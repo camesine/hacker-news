@@ -38,7 +38,7 @@ export class ArticlesComponent implements OnInit {
 
   deleteArticleEvent(id) {
     const subscribe = this.contextProvider.removeArticle(id).subscribe(() => {
-      this.listar();
+      this.articles = this.articles.filter((article) => article._id !== id);
     }, (err) => {
       alert('Error');
     }, () => {
