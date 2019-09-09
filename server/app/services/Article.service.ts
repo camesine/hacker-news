@@ -11,14 +11,16 @@ export class ArticleService {
         const response = await axios.get(config.URL_ARTICLES);
         const articles: IResponseArticles[] = response.data.hits.length ? response.data.hits : [];
         const result: IArticle[] = articles.reduce((acc, current) => {
-            acc.push({
-                articleId: current.objectID,
-                author: current.author,
-                date: current.created_at,
-                delete: false,
-                title: current.story_title || current.title,
-                url: current.url || current.story_url,
-            });
+            if (current.story_title || current.title) {
+                acc.push({
+                    articleId: current.objectID,
+                    author: current.author,
+                    date: current.created_at,
+                    delete: false,
+                    title: current.story_title || current.title,
+                    url: current.url || current.story_url,
+                });
+            }
             return acc;
         }, []);
         await TempArticles.remove({});
